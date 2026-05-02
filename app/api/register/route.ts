@@ -5,7 +5,7 @@ import { hashPassword, encryptPassword } from "@/lib/password";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, password } = body;
+    const { name, email, password, role } = body;
 
     if (!email || !password) {
       return NextResponse.json(
@@ -28,16 +28,21 @@ export async function POST(request: NextRequest) {
     const hashedPassword = await hashPassword(password);
     const encryptedPassword = encryptPassword(password);
 
+    // Default to USER if invalid role is provided
+    const validRoles = ["USER", "ORGANIZER", "ADMIN"];
+    const userRole = validRoles.includes(role) ? role : "USER";
+
     const user = await prisma.user.create({
       data: {
         name,
         email,
         hashedPassword,
         encryptedPassword,
+        role: userRole,
       },
     });
 
-    console.log("User created successfully:", user.id, user.email);
+    console.log("User created successfully:", user.id, user.email, user.role);
 
     return NextResponse.json(
       { message: "User created successfully" },

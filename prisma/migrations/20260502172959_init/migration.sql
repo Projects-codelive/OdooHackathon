@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "Role" AS ENUM ('USER', 'ORGANIZER', 'ADMIN');
+
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
@@ -7,7 +10,8 @@ CREATE TABLE "User" (
     "image" TEXT,
     "hashedPassword" TEXT,
     "encryptedPassword" TEXT,
-    "role" TEXT NOT NULL DEFAULT 'user',
+    "role" "Role" NOT NULL DEFAULT 'USER',
+    "isActive" BOOLEAN NOT NULL DEFAULT true,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 

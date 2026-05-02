@@ -1,65 +1,60 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-          style={{ width: "auto", height: "auto" }}
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-col flex-1 items-center justify-center min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900 font-sans text-white px-4">
+      <main className="flex w-full max-w-4xl flex-col items-center justify-center py-20">
+        
+        {/* Animated glowing orb behind the content */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/30 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="relative z-10 flex flex-col items-center text-center gap-8 bg-white/5 backdrop-blur-xl border border-white/10 p-12 rounded-3xl shadow-2xl">
+          <div className="w-20 h-20 bg-gradient-to-tr from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/30 mb-2">
+            <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          
+          <h1 className="text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">
+            Authentication Portal
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          
+          <p className="max-w-xl text-lg leading-relaxed text-gray-300">
+            Welcome to the secure authentication system. Experience seamless login, registration, and role management built with premium design and top-tier security.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-              style={{ width: "auto", height: "auto" }}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+          <div className="flex flex-col sm:flex-row gap-5 w-full max-w-2xl mt-6 justify-center">
+            <Link
+              href="/user/login"
+              className="flex-1 flex items-center justify-center gap-2 h-14 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-6 text-white font-semibold text-lg transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] hover:scale-[1.02]"
+            >
+              👤 User Login
+            </Link>
+            
+            <Link
+              href="/organizer/login"
+              className="flex-1 flex items-center justify-center gap-2 h-14 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-6 text-white font-semibold text-lg transition-all shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:scale-[1.02]"
+            >
+              🏢 Organizer Login
+            </Link>
+
+            <Link
+              href="/admin/login"
+              className="flex-1 flex items-center justify-center gap-2 h-14 rounded-xl bg-gradient-to-r from-red-600 to-orange-500 px-6 text-white font-semibold text-lg transition-all shadow-[0_0_20px_rgba(239,68,68,0.4)] hover:shadow-[0_0_30px_rgba(239,68,68,0.6)] hover:scale-[1.02]"
+            >
+              ⚡ Admin Login
+            </Link>
+          </div>
+
+          <div className="mt-4">
+            <Link
+              href="/register"
+              className="flex items-center justify-center h-12 rounded-xl border border-white/20 bg-white/5 px-8 font-medium text-white transition-all hover:bg-white/10 hover:border-white/30 hover:scale-[1.02]"
+            >
+              Create an Account
+            </Link>
+          </div>
         </div>
       </main>
     </div>

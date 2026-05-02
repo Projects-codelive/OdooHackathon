@@ -1,20 +1,15 @@
 import { type DefaultSession } from "next-auth";
 
-declare module "next-auth" {
-  interface Session {
-    user: {
-      id: string;
-      role: string;
-    } & DefaultSession["user"];
-  }
-}
-
 export const authConfig = {
   trustHosts: true,
   pages: {
-    signIn: "/login",
+    signIn: "/user/login",
+    error: "/user/login",
   },
   callbacks: {
+    async redirect({ url, baseUrl }: { url: string; baseUrl: string }) {
+      return `${baseUrl}/user/home`;
+    },
     async jwt({ token, user }: { token: any; user: any }) {
       if (user) {
         token.id = user.id;

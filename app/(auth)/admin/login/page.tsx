@@ -1,10 +1,10 @@
 import AuthCard from "@/components/auth/AuthCard";
 import LoginForm from "@/components/auth/LoginForm";
 
-export default function LoginPage() {
+export default function AdminLoginPage() {
   return (
-    <AuthCard title="Welcome Back">
-      <LoginForm />
+    <AuthCard title="Admin Login">
+      <LoginForm roleDisplay="Admin" />
     </AuthCard>
   );
 }

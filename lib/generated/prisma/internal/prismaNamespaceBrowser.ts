@@ -55,7 +55,23 @@ export const ModelName = {
   Account: 'Account',
   Session: 'Session',
   VerificationToken: 'VerificationToken',
-  PasswordReset: 'PasswordReset'
+  PasswordReset: 'PasswordReset',
+  Resource: 'Resource',
+  Service: 'Service',
+  ServiceProvider: 'ServiceProvider',
+  ServiceResource: 'ServiceResource',
+  Schedule: 'Schedule',
+  WeeklyRule: 'WeeklyRule',
+  FlexibleDay: 'FlexibleDay',
+  ProviderSlot: 'ProviderSlot',
+  Booking: 'Booking',
+  RescheduleLog: 'RescheduleLog',
+  Question: 'Question',
+  QuestionOption: 'QuestionOption',
+  BookingAnswer: 'BookingAnswer',
+  Payment: 'Payment',
+  Notification: 'Notification',
+  AuditLog: 'AuditLog'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -83,8 +99,11 @@ export const UserScalarFieldEnum = {
   hashedPassword: 'hashedPassword',
   encryptedPassword: 'encryptedPassword',
   role: 'role',
+  isActive: 'isActive',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  phoneNumber: 'phoneNumber',
+  avatarUrl: 'avatarUrl'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -139,12 +158,253 @@ export const PasswordResetScalarFieldEnum = {
 export type PasswordResetScalarFieldEnum = (typeof PasswordResetScalarFieldEnum)[keyof typeof PasswordResetScalarFieldEnum]
 
 
+export const ResourceScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ResourceScalarFieldEnum = (typeof ResourceScalarFieldEnum)[keyof typeof ResourceScalarFieldEnum]
+
+
+export const ServiceScalarFieldEnum = {
+  id: 'id',
+  organiserId: 'organiserId',
+  title: 'title',
+  description: 'description',
+  durationMinutes: 'durationMinutes',
+  type: 'type',
+  isPublished: 'isPublished',
+  shareToken: 'shareToken',
+  advancePayment: 'advancePayment',
+  paymentAmount: 'paymentAmount',
+  currency: 'currency',
+  manualConfirm: 'manualConfirm',
+  assignmentMode: 'assignmentMode',
+  maxPerSlot: 'maxPerSlot',
+  venue: 'venue',
+  location: 'location',
+  imageUrl: 'imageUrl',
+  price: 'price',
+  cancellationWindowMinutes: 'cancellationWindowMinutes',
+  introMessage: 'introMessage',
+  confirmationMessage: 'confirmationMessage',
+  slotIntervalMinutes: 'slotIntervalMinutes',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  deletedAt: 'deletedAt'
+} as const
+
+export type ServiceScalarFieldEnum = (typeof ServiceScalarFieldEnum)[keyof typeof ServiceScalarFieldEnum]
+
+
+export const ServiceProviderScalarFieldEnum = {
+  id: 'id',
+  serviceId: 'serviceId',
+  userId: 'userId',
+  createdAt: 'createdAt'
+} as const
+
+export type ServiceProviderScalarFieldEnum = (typeof ServiceProviderScalarFieldEnum)[keyof typeof ServiceProviderScalarFieldEnum]
+
+
+export const ServiceResourceScalarFieldEnum = {
+  id: 'id',
+  serviceId: 'serviceId',
+  resourceId: 'resourceId',
+  createdAt: 'createdAt'
+} as const
+
+export type ServiceResourceScalarFieldEnum = (typeof ServiceResourceScalarFieldEnum)[keyof typeof ServiceResourceScalarFieldEnum]
+
+
+export const ScheduleScalarFieldEnum = {
+  id: 'id',
+  serviceId: 'serviceId',
+  type: 'type',
+  createdAt: 'createdAt'
+} as const
+
+export type ScheduleScalarFieldEnum = (typeof ScheduleScalarFieldEnum)[keyof typeof ScheduleScalarFieldEnum]
+
+
+export const WeeklyRuleScalarFieldEnum = {
+  id: 'id',
+  scheduleId: 'scheduleId',
+  dayOfWeek: 'dayOfWeek',
+  startMinute: 'startMinute',
+  endMinute: 'endMinute'
+} as const
+
+export type WeeklyRuleScalarFieldEnum = (typeof WeeklyRuleScalarFieldEnum)[keyof typeof WeeklyRuleScalarFieldEnum]
+
+
+export const FlexibleDayScalarFieldEnum = {
+  id: 'id',
+  scheduleId: 'scheduleId',
+  date: 'date',
+  startMinute: 'startMinute',
+  endMinute: 'endMinute'
+} as const
+
+export type FlexibleDayScalarFieldEnum = (typeof FlexibleDayScalarFieldEnum)[keyof typeof FlexibleDayScalarFieldEnum]
+
+
+export const ProviderSlotScalarFieldEnum = {
+  id: 'id',
+  serviceId: 'serviceId',
+  userId: 'userId',
+  resourceId: 'resourceId',
+  startTime: 'startTime',
+  endTime: 'endTime',
+  capacity: 'capacity',
+  booked: 'booked',
+  version: 'version',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProviderSlotScalarFieldEnum = (typeof ProviderSlotScalarFieldEnum)[keyof typeof ProviderSlotScalarFieldEnum]
+
+
+export const BookingScalarFieldEnum = {
+  id: 'id',
+  customerId: 'customerId',
+  serviceId: 'serviceId',
+  providerSlotId: 'providerSlotId',
+  userId: 'userId',
+  resourceId: 'resourceId',
+  status: 'status',
+  paymentStatus: 'paymentStatus',
+  confirmedAt: 'confirmedAt',
+  cancelledAt: 'cancelledAt',
+  completedAt: 'completedAt',
+  notes: 'notes',
+  headcount: 'headcount',
+  rescheduleCount: 'rescheduleCount',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BookingScalarFieldEnum = (typeof BookingScalarFieldEnum)[keyof typeof BookingScalarFieldEnum]
+
+
+export const RescheduleLogScalarFieldEnum = {
+  id: 'id',
+  bookingId: 'bookingId',
+  oldDate: 'oldDate',
+  newDate: 'newDate',
+  oldSlotId: 'oldSlotId',
+  newSlotId: 'newSlotId',
+  rescheduledAt: 'rescheduledAt',
+  rescheduledById: 'rescheduledById',
+  reason: 'reason'
+} as const
+
+export type RescheduleLogScalarFieldEnum = (typeof RescheduleLogScalarFieldEnum)[keyof typeof RescheduleLogScalarFieldEnum]
+
+
+export const QuestionScalarFieldEnum = {
+  id: 'id',
+  serviceId: 'serviceId',
+  text: 'text',
+  type: 'type',
+  required: 'required',
+  order: 'order',
+  createdAt: 'createdAt'
+} as const
+
+export type QuestionScalarFieldEnum = (typeof QuestionScalarFieldEnum)[keyof typeof QuestionScalarFieldEnum]
+
+
+export const QuestionOptionScalarFieldEnum = {
+  id: 'id',
+  questionId: 'questionId',
+  label: 'label',
+  order: 'order'
+} as const
+
+export type QuestionOptionScalarFieldEnum = (typeof QuestionOptionScalarFieldEnum)[keyof typeof QuestionOptionScalarFieldEnum]
+
+
+export const BookingAnswerScalarFieldEnum = {
+  id: 'id',
+  bookingId: 'bookingId',
+  questionId: 'questionId',
+  answerText: 'answerText',
+  selectedOptionId: 'selectedOptionId'
+} as const
+
+export type BookingAnswerScalarFieldEnum = (typeof BookingAnswerScalarFieldEnum)[keyof typeof BookingAnswerScalarFieldEnum]
+
+
+export const PaymentScalarFieldEnum = {
+  id: 'id',
+  bookingId: 'bookingId',
+  amount: 'amount',
+  currency: 'currency',
+  status: 'status',
+  gatewayProvider: 'gatewayProvider',
+  gatewayRef: 'gatewayRef',
+  idempotencyKey: 'idempotencyKey',
+  paidAt: 'paidAt',
+  refundedAt: 'refundedAt',
+  failureReason: 'failureReason',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type PaymentScalarFieldEnum = (typeof PaymentScalarFieldEnum)[keyof typeof PaymentScalarFieldEnum]
+
+
+export const NotificationScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  bookingId: 'bookingId',
+  channel: 'channel',
+  status: 'status',
+  subject: 'subject',
+  body: 'body',
+  sentAt: 'sentAt',
+  failureReason: 'failureReason',
+  createdAt: 'createdAt'
+} as const
+
+export type NotificationScalarFieldEnum = (typeof NotificationScalarFieldEnum)[keyof typeof NotificationScalarFieldEnum]
+
+
+export const AuditLogScalarFieldEnum = {
+  id: 'id',
+  actorId: 'actorId',
+  bookingId: 'bookingId',
+  action: 'action',
+  metadata: 'metadata',
+  ipAddress: 'ipAddress',
+  userAgent: 'userAgent',
+  createdAt: 'createdAt'
+} as const
+
+export type AuditLogScalarFieldEnum = (typeof AuditLogScalarFieldEnum)[keyof typeof AuditLogScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullableJsonNullValueInput = {
+  DbNull: DbNull,
+  JsonNull: JsonNull
+} as const
+
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
 export const QueryMode = {
@@ -161,4 +421,13 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 

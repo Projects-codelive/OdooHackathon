@@ -66,3 +66,83 @@ export type VerificationToken = Prisma.VerificationTokenModel
  * 
  */
 export type PasswordReset = Prisma.PasswordResetModel
+/**
+ * Model Resource
+ * 
+ */
+export type Resource = Prisma.ResourceModel
+/**
+ * Model Service
+ * 
+ */
+export type Service = Prisma.ServiceModel
+/**
+ * Model ServiceProvider
+ * 
+ */
+export type ServiceProvider = Prisma.ServiceProviderModel
+/**
+ * Model ServiceResource
+ * 
+ */
+export type ServiceResource = Prisma.ServiceResourceModel
+/**
+ * Model Schedule
+ * 
+ */
+export type Schedule = Prisma.ScheduleModel
+/**
+ * Model WeeklyRule
+ * 
+ */
+export type WeeklyRule = Prisma.WeeklyRuleModel
+/**
+ * Model FlexibleDay
+ * 
+ */
+export type FlexibleDay = Prisma.FlexibleDayModel
+/**
+ * Model ProviderSlot
+ * 
+ */
+export type ProviderSlot = Prisma.ProviderSlotModel
+/**
+ * Model Booking
+ * 
+ */
+export type Booking = Prisma.BookingModel
+/**
+ * Model RescheduleLog
+ * 
+ */
+export type RescheduleLog = Prisma.RescheduleLogModel
+/**
+ * Model Question
+ * 
+ */
+export type Question = Prisma.QuestionModel
+/**
+ * Model QuestionOption
+ * 
+ */
+export type QuestionOption = Prisma.QuestionOptionModel
+/**
+ * Model BookingAnswer
+ * 
+ */
+export type BookingAnswer = Prisma.BookingAnswerModel
+/**
+ * Model Payment
+ * 
+ */
+export type Payment = Prisma.PaymentModel
+/**
+ * Model Notification
+ * 
+ */
+export type Notification = Prisma.NotificationModel
+/**
+ * Model AuditLog
+ * 
+ */
+export type AuditLog = Prisma.AuditLogModel

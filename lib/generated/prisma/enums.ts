@@ -9,7 +9,98 @@
 * 🟢 You can import this file directly.
 */
 
+export const Role = {
+  USER: 'USER',
+  ORGANIZER: 'ORGANIZER',
+  ADMIN: 'ADMIN'
+} as const
+
+export type Role = (typeof Role)[keyof typeof Role]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const AppointmentType = {
+  USER_BASED: 'USER_BASED',
+  RESOURCE_BASED: 'RESOURCE_BASED'
+} as const
+
+export type AppointmentType = (typeof AppointmentType)[keyof typeof AppointmentType]
+
+
+export const ScheduleType = {
+  WEEKLY: 'WEEKLY',
+  FLEXIBLE: 'FLEXIBLE'
+} as const
+
+export type ScheduleType = (typeof ScheduleType)[keyof typeof ScheduleType]
+
+
+export const BookingStatus = {
+  PENDING: 'PENDING',
+  CONFIRMED: 'CONFIRMED',
+  CANCELLED: 'CANCELLED',
+  RESCHEDULED: 'RESCHEDULED',
+  COMPLETED: 'COMPLETED',
+  NO_SHOW: 'NO_SHOW'
+} as const
+
+export type BookingStatus = (typeof BookingStatus)[keyof typeof BookingStatus]
+
+
+export const AssignmentMode = {
+  AUTOMATIC: 'AUTOMATIC',
+  MANUAL: 'MANUAL'
+} as const
+
+export type AssignmentMode = (typeof AssignmentMode)[keyof typeof AssignmentMode]
+
+
+export const PaymentStatus = {
+  UNPAID: 'UNPAID',
+  PENDING: 'PENDING',
+  PAID: 'PAID',
+  REFUNDED: 'REFUNDED',
+  FAILED: 'FAILED'
+} as const
+
+export type PaymentStatus = (typeof PaymentStatus)[keyof typeof PaymentStatus]
+
+
+export const QuestionType = {
+  TEXT: 'TEXT',
+  MULTIPLE_CHOICE: 'MULTIPLE_CHOICE',
+  BOOLEAN: 'BOOLEAN',
+  NUMBER: 'NUMBER'
+} as const
+
+export type QuestionType = (typeof QuestionType)[keyof typeof QuestionType]
+
+
+export const NotificationChannel = {
+  EMAIL: 'EMAIL',
+  SMS: 'SMS',
+  PUSH: 'PUSH'
+} as const
+
+export type NotificationChannel = (typeof NotificationChannel)[keyof typeof NotificationChannel]
+
+
+export const NotificationStatus = {
+  QUEUED: 'QUEUED',
+  SENT: 'SENT',
+  FAILED: 'FAILED'
+} as const
+
+export type NotificationStatus = (typeof NotificationStatus)[keyof typeof NotificationStatus]
+
+
+export const AuditAction = {
+  CREATED: 'CREATED',
+  UPDATED: 'UPDATED',
+  CANCELLED: 'CANCELLED',
+  CONFIRMED: 'CONFIRMED',
+  RESCHEDULED: 'RESCHEDULED',
+  PAYMENT_RECEIVED: 'PAYMENT_RECEIVED',
+  PAYMENT_REFUNDED: 'PAYMENT_REFUNDED'
+} as const
+
+export type AuditAction = (typeof AuditAction)[keyof typeof AuditAction]
