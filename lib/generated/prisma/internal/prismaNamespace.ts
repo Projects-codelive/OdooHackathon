@@ -2030,7 +2030,11 @@ export const UserScalarFieldEnum = {
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   phoneNumber: 'phoneNumber',
-  avatarUrl: 'avatarUrl'
+  avatarUrl: 'avatarUrl',
+  bio: 'bio',
+  location: 'location',
+  biometricId: 'biometricId',
+  isBiometricActive: 'isBiometricActive'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]

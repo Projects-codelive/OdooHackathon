@@ -38,6 +38,10 @@ export type UserMinAggregateOutputType = {
   updatedAt: Date | null
   phoneNumber: string | null
   avatarUrl: string | null
+  bio: string | null
+  location: string | null
+  biometricId: string | null
+  isBiometricActive: boolean | null
 }
 
 export type UserMaxAggregateOutputType = {
@@ -54,6 +58,10 @@ export type UserMaxAggregateOutputType = {
   updatedAt: Date | null
   phoneNumber: string | null
   avatarUrl: string | null
+  bio: string | null
+  location: string | null
+  biometricId: string | null
+  isBiometricActive: boolean | null
 }
 
 export type UserCountAggregateOutputType = {
@@ -70,6 +78,10 @@ export type UserCountAggregateOutputType = {
   updatedAt: number
   phoneNumber: number
   avatarUrl: number
+  bio: number
+  location: number
+  biometricId: number
+  isBiometricActive: number
   _all: number
 }
 
@@ -88,6 +100,10 @@ export type UserMinAggregateInputType = {
   updatedAt?: true
   phoneNumber?: true
   avatarUrl?: true
+  bio?: true
+  location?: true
+  biometricId?: true
+  isBiometricActive?: true
 }
 
 export type UserMaxAggregateInputType = {
@@ -104,6 +120,10 @@ export type UserMaxAggregateInputType = {
   updatedAt?: true
   phoneNumber?: true
   avatarUrl?: true
+  bio?: true
+  location?: true
+  biometricId?: true
+  isBiometricActive?: true
 }
 
 export type UserCountAggregateInputType = {
@@ -120,6 +140,10 @@ export type UserCountAggregateInputType = {
   updatedAt?: true
   phoneNumber?: true
   avatarUrl?: true
+  bio?: true
+  location?: true
+  biometricId?: true
+  isBiometricActive?: true
   _all?: true
 }
 
@@ -209,6 +233,10 @@ export type UserGroupByOutputType = {
   updatedAt: Date
   phoneNumber: string | null
   avatarUrl: string | null
+  bio: string | null
+  location: string | null
+  biometricId: string | null
+  isBiometricActive: boolean
   _count: UserCountAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
   _max: UserMaxAggregateOutputType | null
@@ -246,6 +274,10 @@ export type UserWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   phoneNumber?: Prisma.StringNullableFilter<"User"> | string | null
   avatarUrl?: Prisma.StringNullableFilter<"User"> | string | null
+  bio?: Prisma.StringNullableFilter<"User"> | string | null
+  location?: Prisma.StringNullableFilter<"User"> | string | null
+  biometricId?: Prisma.StringNullableFilter<"User"> | string | null
+  isBiometricActive?: Prisma.BoolFilter<"User"> | boolean
   accounts?: Prisma.AccountListRelationFilter
   sessions?: Prisma.SessionListRelationFilter
   passwordResets?: Prisma.PasswordResetListRelationFilter
@@ -272,6 +304,10 @@ export type UserOrderByWithRelationInput = {
   updatedAt?: Prisma.SortOrder
   phoneNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   avatarUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  bio?: Prisma.SortOrderInput | Prisma.SortOrder
+  location?: Prisma.SortOrderInput | Prisma.SortOrder
+  biometricId?: Prisma.SortOrderInput | Prisma.SortOrder
+  isBiometricActive?: Prisma.SortOrder
   accounts?: Prisma.AccountOrderByRelationAggregateInput
   sessions?: Prisma.SessionOrderByRelationAggregateInput
   passwordResets?: Prisma.PasswordResetOrderByRelationAggregateInput
@@ -301,6 +337,10 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   phoneNumber?: Prisma.StringNullableFilter<"User"> | string | null
   avatarUrl?: Prisma.StringNullableFilter<"User"> | string | null
+  bio?: Prisma.StringNullableFilter<"User"> | string | null
+  location?: Prisma.StringNullableFilter<"User"> | string | null
+  biometricId?: Prisma.StringNullableFilter<"User"> | string | null
+  isBiometricActive?: Prisma.BoolFilter<"User"> | boolean
   accounts?: Prisma.AccountListRelationFilter
   sessions?: Prisma.SessionListRelationFilter
   passwordResets?: Prisma.PasswordResetListRelationFilter
@@ -327,6 +367,10 @@ export type UserOrderByWithAggregationInput = {
   updatedAt?: Prisma.SortOrder
   phoneNumber?: Prisma.SortOrderInput | Prisma.SortOrder
   avatarUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  bio?: Prisma.SortOrderInput | Prisma.SortOrder
+  location?: Prisma.SortOrderInput | Prisma.SortOrder
+  biometricId?: Prisma.SortOrderInput | Prisma.SortOrder
+  isBiometricActive?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
   _min?: Prisma.UserMinOrderByAggregateInput
@@ -349,6 +393,10 @@ export type UserScalarWhereWithAggregatesInput = {
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
   phoneNumber?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   avatarUrl?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  bio?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  location?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  biometricId?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  isBiometricActive?: Prisma.BoolWithAggregatesFilter<"User"> | boolean
 }
 
 export type UserCreateInput = {
@@ -365,6 +413,10 @@ export type UserCreateInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetCreateNestedManyWithoutUserInput
@@ -391,6 +443,10 @@ export type UserUncheckedCreateInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetUncheckedCreateNestedManyWithoutUserInput
@@ -417,6 +473,10 @@ export type UserUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUpdateManyWithoutUserNestedInput
@@ -443,6 +503,10 @@ export type UserUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUncheckedUpdateManyWithoutUserNestedInput
@@ -469,6 +533,10 @@ export type UserCreateManyInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
 }
 
 export type UserUpdateManyMutationInput = {
@@ -485,6 +553,10 @@ export type UserUpdateManyMutationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type UserUncheckedUpdateManyInput = {
@@ -501,6 +573,10 @@ export type UserUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type UserCountOrderByAggregateInput = {
@@ -517,6 +593,10 @@ export type UserCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
   phoneNumber?: Prisma.SortOrder
   avatarUrl?: Prisma.SortOrder
+  bio?: Prisma.SortOrder
+  location?: Prisma.SortOrder
+  biometricId?: Prisma.SortOrder
+  isBiometricActive?: Prisma.SortOrder
 }
 
 export type UserMaxOrderByAggregateInput = {
@@ -533,6 +613,10 @@ export type UserMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
   phoneNumber?: Prisma.SortOrder
   avatarUrl?: Prisma.SortOrder
+  bio?: Prisma.SortOrder
+  location?: Prisma.SortOrder
+  biometricId?: Prisma.SortOrder
+  isBiometricActive?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
@@ -549,6 +633,10 @@ export type UserMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
   phoneNumber?: Prisma.SortOrder
   avatarUrl?: Prisma.SortOrder
+  bio?: Prisma.SortOrder
+  location?: Prisma.SortOrder
+  biometricId?: Prisma.SortOrder
+  isBiometricActive?: Prisma.SortOrder
 }
 
 export type UserScalarRelationFilter = {
@@ -743,6 +831,10 @@ export type UserCreateWithoutAccountsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetCreateNestedManyWithoutUserInput
   providedServices?: Prisma.ServiceProviderCreateNestedManyWithoutUserInput
@@ -768,6 +860,10 @@ export type UserUncheckedCreateWithoutAccountsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetUncheckedCreateNestedManyWithoutUserInput
   providedServices?: Prisma.ServiceProviderUncheckedCreateNestedManyWithoutUserInput
@@ -809,6 +905,10 @@ export type UserUpdateWithoutAccountsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUpdateManyWithoutUserNestedInput
   providedServices?: Prisma.ServiceProviderUpdateManyWithoutUserNestedInput
@@ -834,6 +934,10 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUncheckedUpdateManyWithoutUserNestedInput
   providedServices?: Prisma.ServiceProviderUncheckedUpdateManyWithoutUserNestedInput
@@ -859,6 +963,10 @@ export type UserCreateWithoutSessionsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetCreateNestedManyWithoutUserInput
   providedServices?: Prisma.ServiceProviderCreateNestedManyWithoutUserInput
@@ -884,6 +992,10 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetUncheckedCreateNestedManyWithoutUserInput
   providedServices?: Prisma.ServiceProviderUncheckedCreateNestedManyWithoutUserInput
@@ -925,6 +1037,10 @@ export type UserUpdateWithoutSessionsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUpdateManyWithoutUserNestedInput
   providedServices?: Prisma.ServiceProviderUpdateManyWithoutUserNestedInput
@@ -950,6 +1066,10 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUncheckedUpdateManyWithoutUserNestedInput
   providedServices?: Prisma.ServiceProviderUncheckedUpdateManyWithoutUserNestedInput
@@ -975,6 +1095,10 @@ export type UserCreateWithoutPasswordResetsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   providedServices?: Prisma.ServiceProviderCreateNestedManyWithoutUserInput
@@ -1000,6 +1124,10 @@ export type UserUncheckedCreateWithoutPasswordResetsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   providedServices?: Prisma.ServiceProviderUncheckedCreateNestedManyWithoutUserInput
@@ -1041,6 +1169,10 @@ export type UserUpdateWithoutPasswordResetsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   providedServices?: Prisma.ServiceProviderUpdateManyWithoutUserNestedInput
@@ -1066,6 +1198,10 @@ export type UserUncheckedUpdateWithoutPasswordResetsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   providedServices?: Prisma.ServiceProviderUncheckedUpdateManyWithoutUserNestedInput
@@ -1091,6 +1227,10 @@ export type UserCreateWithoutOrganisedServicesInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetCreateNestedManyWithoutUserInput
@@ -1116,6 +1256,10 @@ export type UserUncheckedCreateWithoutOrganisedServicesInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetUncheckedCreateNestedManyWithoutUserInput
@@ -1157,6 +1301,10 @@ export type UserUpdateWithoutOrganisedServicesInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUpdateManyWithoutUserNestedInput
@@ -1182,6 +1330,10 @@ export type UserUncheckedUpdateWithoutOrganisedServicesInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUncheckedUpdateManyWithoutUserNestedInput
@@ -1207,6 +1359,10 @@ export type UserCreateWithoutProvidedServicesInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetCreateNestedManyWithoutUserInput
@@ -1232,6 +1388,10 @@ export type UserUncheckedCreateWithoutProvidedServicesInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetUncheckedCreateNestedManyWithoutUserInput
@@ -1273,6 +1433,10 @@ export type UserUpdateWithoutProvidedServicesInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUpdateManyWithoutUserNestedInput
@@ -1298,6 +1462,10 @@ export type UserUncheckedUpdateWithoutProvidedServicesInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUncheckedUpdateManyWithoutUserNestedInput
@@ -1323,6 +1491,10 @@ export type UserCreateWithoutProviderSlotsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetCreateNestedManyWithoutUserInput
@@ -1348,6 +1520,10 @@ export type UserUncheckedCreateWithoutProviderSlotsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetUncheckedCreateNestedManyWithoutUserInput
@@ -1389,6 +1565,10 @@ export type UserUpdateWithoutProviderSlotsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUpdateManyWithoutUserNestedInput
@@ -1414,6 +1594,10 @@ export type UserUncheckedUpdateWithoutProviderSlotsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUncheckedUpdateManyWithoutUserNestedInput
@@ -1439,6 +1623,10 @@ export type UserCreateWithoutCustomerBookingsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetCreateNestedManyWithoutUserInput
@@ -1464,6 +1652,10 @@ export type UserUncheckedCreateWithoutCustomerBookingsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetUncheckedCreateNestedManyWithoutUserInput
@@ -1494,6 +1686,10 @@ export type UserCreateWithoutProviderBookingsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetCreateNestedManyWithoutUserInput
@@ -1519,6 +1715,10 @@ export type UserUncheckedCreateWithoutProviderBookingsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetUncheckedCreateNestedManyWithoutUserInput
@@ -1560,6 +1760,10 @@ export type UserUpdateWithoutCustomerBookingsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUpdateManyWithoutUserNestedInput
@@ -1585,6 +1789,10 @@ export type UserUncheckedUpdateWithoutCustomerBookingsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUncheckedUpdateManyWithoutUserNestedInput
@@ -1621,6 +1829,10 @@ export type UserUpdateWithoutProviderBookingsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUpdateManyWithoutUserNestedInput
@@ -1646,6 +1858,10 @@ export type UserUncheckedUpdateWithoutProviderBookingsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUncheckedUpdateManyWithoutUserNestedInput
@@ -1671,6 +1887,10 @@ export type UserCreateWithoutNotificationsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetCreateNestedManyWithoutUserInput
@@ -1696,6 +1916,10 @@ export type UserUncheckedCreateWithoutNotificationsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetUncheckedCreateNestedManyWithoutUserInput
@@ -1737,6 +1961,10 @@ export type UserUpdateWithoutNotificationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUpdateManyWithoutUserNestedInput
@@ -1762,6 +1990,10 @@ export type UserUncheckedUpdateWithoutNotificationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUncheckedUpdateManyWithoutUserNestedInput
@@ -1787,6 +2019,10 @@ export type UserCreateWithoutAuditLogsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetCreateNestedManyWithoutUserInput
@@ -1812,6 +2048,10 @@ export type UserUncheckedCreateWithoutAuditLogsInput = {
   updatedAt?: Date | string
   phoneNumber?: string | null
   avatarUrl?: string | null
+  bio?: string | null
+  location?: string | null
+  biometricId?: string | null
+  isBiometricActive?: boolean
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   passwordResets?: Prisma.PasswordResetUncheckedCreateNestedManyWithoutUserInput
@@ -1853,6 +2093,10 @@ export type UserUpdateWithoutAuditLogsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUpdateManyWithoutUserNestedInput
@@ -1878,6 +2122,10 @@ export type UserUncheckedUpdateWithoutAuditLogsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  biometricId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isBiometricActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResets?: Prisma.PasswordResetUncheckedUpdateManyWithoutUserNestedInput
@@ -2015,6 +2263,10 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   updatedAt?: boolean
   phoneNumber?: boolean
   avatarUrl?: boolean
+  bio?: boolean
+  location?: boolean
+  biometricId?: boolean
+  isBiometricActive?: boolean
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   passwordResets?: boolean | Prisma.User$passwordResetsArgs<ExtArgs>
@@ -2042,6 +2294,10 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   updatedAt?: boolean
   phoneNumber?: boolean
   avatarUrl?: boolean
+  bio?: boolean
+  location?: boolean
+  biometricId?: boolean
+  isBiometricActive?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -2058,6 +2314,10 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   updatedAt?: boolean
   phoneNumber?: boolean
   avatarUrl?: boolean
+  bio?: boolean
+  location?: boolean
+  biometricId?: boolean
+  isBiometricActive?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
@@ -2074,9 +2334,13 @@ export type UserSelectScalar = {
   updatedAt?: boolean
   phoneNumber?: boolean
   avatarUrl?: boolean
+  bio?: boolean
+  location?: boolean
+  biometricId?: boolean
+  isBiometricActive?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "image" | "hashedPassword" | "encryptedPassword" | "role" | "isActive" | "createdAt" | "updatedAt" | "phoneNumber" | "avatarUrl", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "image" | "hashedPassword" | "encryptedPassword" | "role" | "isActive" | "createdAt" | "updatedAt" | "phoneNumber" | "avatarUrl" | "bio" | "location" | "biometricId" | "isBiometricActive", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
@@ -2121,6 +2385,10 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     updatedAt: Date
     phoneNumber: string | null
     avatarUrl: string | null
+    bio: string | null
+    location: string | null
+    biometricId: string | null
+    isBiometricActive: boolean
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -2567,6 +2835,10 @@ export interface UserFieldRefs {
   readonly updatedAt: Prisma.FieldRef<"User", 'DateTime'>
   readonly phoneNumber: Prisma.FieldRef<"User", 'String'>
   readonly avatarUrl: Prisma.FieldRef<"User", 'String'>
+  readonly bio: Prisma.FieldRef<"User", 'String'>
+  readonly location: Prisma.FieldRef<"User", 'String'>
+  readonly biometricId: Prisma.FieldRef<"User", 'String'>
+  readonly isBiometricActive: Prisma.FieldRef<"User", 'Boolean'>
 }
     
 

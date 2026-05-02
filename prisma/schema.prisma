@@ -33,6 +33,10 @@ model User {
   // New fields
   phoneNumber      String?
   avatarUrl        String?
+  bio              String?
+  location         String?
+  biometricId      String?
+  isBiometricActive Boolean  @default(false)
 
   // Relations
   providedServices ServiceProvider[]
